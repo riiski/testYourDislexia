@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ar man disleksija? Testas suaugusiems</title>
+    </head>
+    <body>
+        <div class="test intro" id="introbox">
+                <h1>Testas „Ar man disleksija?“ (netinka vaikams!)</h1>
+                <p>Atsakęs į pateiktus klausimus, sužinosi, ar verta įtarinėti, kad tau ar tavo vertinamam žmogui būdinga tam tikro laipsnio disleksija (skaitymo sutrikimas). Ties kiekvienu klausimu pasirink tau tinkantį variantą. Tavo testo rezultatas bus variantų taškų suma. </p>
+                <button id="startTestBtn" onclick="startTest();" type="button">Pradėti</button>
+		</div>
+
+        <div id="q1" style="display:none;">
+            <form>
+                <h2>1. Ar painioji vizualiai panašius žodžius, tokius kaip „katė“ ir „kalė“, „para“ ir „bara“, „padas“ ir „badas“?</h2>
+                <input type="radio" name="answer" value="3" onclick="secondQ(3);">Beveik niekada
+                <input type="radio" name="answer" value="6" onclick="secondQ(6);">Kartais
+                <input type="radio" name="answer" value="9" onclick="secondQ(9);">Dažnai
+                <input type="radio" name="answer" value="12" onclick="secondQ(12);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q2" style="display:none;">
+            <form>
+                <h2>2. Ar skaitydamas pameti arba praleidi eilutes?</h2>
+                <input type="radio" name="answer" value="2" onclick="thirdQ(2);">Beveik niekada
+                <input type="radio" name="answer" value="4" onclick="thirdQ(4);">Kartais
+                <input type="radio" name="answer" value="6" onclick="thirdQ(6);">Dažnai
+                <input type="radio" name="answer" value="8" onclick="thirdQ(8);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q3" style="display:none;">
+            <form>
+                <h2>3. 
+                    Ar painioji daiktų pavadinimus, pavyzdžiui, „boileris“ ar „broileris“?</h2>
+                <input type="radio" name="answer" value="1" onclick="fourthQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="fourthQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="fourthQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="fourthQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q4" style="display:none;">
+            <form>
+                <h2>4. 
+                    Ar painioji dešinę su kaire?</h2>
+                <input type="radio" name="answer" value="1" onclick="fiveQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="fiveQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="fiveQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="fiveQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q5" style="display:none;">
+            <form>
+                <h2>5. 
+                    Ar glumina žemėlapio skaitymas, kelio svetimoje vietoje paieška?</h2>
+                <input type="radio" name="answer" value="1" onclick="sixQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="sixQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="sixQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="sixQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q6" style="display:none;">
+            <form>
+                <h2>6. 
+                    Ar dar kartą perskaitai pastraipą, kad ją suprastum?</h2>
+                <input type="radio" name="answer" value="1" onclick="sevenQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="sevenQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="sevenQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="sevenQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q7" style="display:none;">
+            <form>
+                <h2>7. 
+                    Ar susipainioji, kai vienu metu gauni keletą nurodymų?</h2>
+                <input type="radio" name="answer" value="1" onclick="eightQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="eightQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="eightQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="eightQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q8" style="display:none;">
+            <form>
+                <h2>8. 
+                    Ar darai klaidas rašydamas trumpąsias SMS žinutes?</h2>
+                <input type="radio" name="answer" value="1" onclick="nineQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="nineQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="nineQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="nineQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q9" style="display:none;">
+            <form>
+                <h2>9. 
+                    Ar tau sunku rasti tinkamą žodį?</h2>
+                <input type="radio" name="answer" value="1" onclick="tenQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="tenQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="tenQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="tenQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q10" style="display:none;">
+            <form>
+                <h2>10. 
+                    Ar siūlai netikėtus problemų sprendimo būdus?</h2>
+                <input type="radio" name="answer" value="1" onclick="elevenQ(1);">Beveik niekada
+                <input type="radio" name="answer" value="2" onclick="elevenQ(2);">Kartais
+                <input type="radio" name="answer" value="3" onclick="elevenQ(3);">Dažnai
+                <input type="radio" name="answer" value="4" onclick="elevenQ(4);">Labai dažnai
+            </form>
+        </div>
+
+        <div id="q11" style="display:none;">
+            <form>
+                <h2>11. 
+                    Ar tau lengva ištarti tokius žodžius kaip „kupranugaris“?</h2>
+                <input type="radio" name="answer" value="3" onclick="twelveQ(3);">Lengva
+                <input type="radio" name="answer" value="6" onclick="twelveQ(6);">Nėra paprasta
+                <input type="radio" name="answer" value="9" onclick="twelveQ(9);">Sunku
+                <input type="radio" name="answer" value="12" onclick="twelveQ(12);">Labai sunku
+            </form>
+        </div>
+
+        <div id="q12" style="display:none;">
+            <form>
+                <h2>12. Ar sunku dėstyti mintis raštu?</h2>
+                <input type="radio" name="answer" value="2" onclick="thirteenQ(2);">Lengva
+                <input type="radio" name="answer" value="4" onclick="thirteenQ(4);">Nėra paprasta
+                <input type="radio" name="answer" value="6" onclick="thirteenQ(6);">Sunku
+                <input type="radio" name="answer" value="8" onclick="thirteenQ(8);">Labai sunku
+            </form>
+        </div>
+
+        <div id="q13" style="display:none;">
+            <form>
+                <h2>13. 
+                    Ar lengvai išmokai daugybos lentelę?</h2>
+                <input type="radio" name="answer" value="2" onclick="fourteenQ(2);">Lengva
+                <input type="radio" name="answer" value="4" onclick="fourteenQ(4);">Nėra paprasta
+                <input type="radio" name="answer" value="6" onclick="fourteenQ(6);">Sunku
+                <input type="radio" name="answer" value="8" onclick="fourteenQ(8);">Labai sunku
+            </form>
+        </div>
+
+        <div id="q14" style="display:none;">
+            <form>
+                <h2>14. 
+                    Kaip sekasi „deklamuoti“ abėcėlę?</h2>
+                <input type="radio" name="answer" value="1" onclick="fiftheenQ(1);">Lengva
+                <input type="radio" name="answer" value="2" onclick="fiftheenQ(2);">Nėra paprasta
+                <input type="radio" name="answer" value="3" onclick="fiftheenQ(3);">Sunku
+                <input type="radio" name="answer" value="4" onclick="fiftheenQ(4);">Labai sunku
+            </form>
+        </div>
+
+        <div id="q15" style="display:none;">
+            <form>
+                <h2>15. 
+                    Ar tau sunku skaityti garsiai?</h2>
+                <input type="radio" name="answer" value="1" onclick="finish(1);">Lengva
+                <input type="radio" name="answer" value="2" onclick="finish(2);">Nėra paprasta
+                <input type="radio" name="answer" value="3" onclick="finish(3);">Sunku
+                <input type="radio" name="answer" value="4" onclick="finish(4);">Labai sunku
+            </form>
+        </div>
+
+        <div id="finish" style="display:none;">
+            <form>
+                <h2>Finish</h2>
+                <p id="sump"></p>
+            </form>
+        </div>
+
+              
+        <script>
+            var result_arr = [];
+
+            function startTest() {
+
+                const element = document.getElementById("q1");
+                const introbox = document.getElementById("introbox");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+
+                
+            }
+            function secondQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q2");
+                const introbox = document.getElementById("q1");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function thirdQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q3");
+                const introbox = document.getElementById("q2");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function fourthQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q4");
+                const introbox = document.getElementById("q3");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function fiveQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q5");
+                const introbox = document.getElementById("q4");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function sixQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q6");
+                const introbox = document.getElementById("q5");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function sevenQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q7");
+                const introbox = document.getElementById("q6");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function eightQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q8");
+                const introbox = document.getElementById("q7");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function nineQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q9");
+                const introbox = document.getElementById("q8");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function tenQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q10");
+                const introbox = document.getElementById("q9");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function elevenQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q11");
+                const introbox = document.getElementById("q10");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function twelveQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q12");
+                const introbox = document.getElementById("q11");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function thirteenQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q13");
+                const introbox = document.getElementById("q12");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function fourteenQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q14");
+                const introbox = document.getElementById("q13");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function fiftheenQ(q){
+                result_arr.push(q);
+                const element = document.getElementById("q15");
+                const introbox = document.getElementById("q14");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+            }
+            function finish(q){
+                result_arr.push(q);
+                sum_of_r = result_arr.reduce((a, b) => a + b, 0);
+                const element = document.getElementById("finish");
+                const introbox = document.getElementById("q15");
+                element.scrollIntoView();
+                introbox.style.display = "none";
+                element.style.display = "block";
+                const sum_element = document.getElementById('sump').innerText = sum_of_r;
+            }
+
+        </script>
+    </body>
+</html>
