@@ -619,14 +619,12 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKFRJPXX2C"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-JKFRJPXX2C');
-</script>
+        gtag('config', 'G-JKFRJPXX2C');
 
-    <script>
         var result_arr = [];
 
         function startTest() {
@@ -760,6 +758,11 @@
             introbox.style.display = "none";
             element.style.display = "block";
             const sum_element = document.getElementById('sump').innerText = sum_of_r;
+            gtag('event', 'show_test_result' ,{
+                'event_category': "general",
+                'event_label': "Test result",
+                'value': sum_of_r
+            });
         }
 
 
